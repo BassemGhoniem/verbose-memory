@@ -115,12 +115,13 @@ angular.module('confusionApp')
     };
 
     $scope.submitComment = function() {
-
         $scope.mycomment.date = new Date().toISOString();
         $scope.dish.comments.push($scope.mycomment);
 
+        menuFactory.getDishes().update({
+            id: $scope.dish.id
+        }, $scope.dish);
         $scope.commentForm.$setPristine();
-
         $scope.mycomment = {
             rating: 5,
             comment: "",
