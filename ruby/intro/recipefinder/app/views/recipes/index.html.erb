@@ -1,0 +1,33 @@
+<h1>Search for your next fav recipe</h1>
+
+<form>
+    <input type="text" name="search" placeholder="Search"/>
+    <button>Search</button>
+</form>
+<br/>
+<h1>Searching for -
+    <%= @search_term %></h1>
+<% if @recipes.size == 0 %>
+<p>
+    Sorry we didn't find any related result
+</p>
+<% else %>
+<table border="1">
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Rating</th>
+    </tr>
+    <% @recipes.each do |recipe| %>
+    <tr class=<%= cycle('even', 'odd') %>>
+        <td>
+            <%= link_to image_tag(recipe["image_url"], size: "100x100", alt:recipe["title"]) ,recipe["source_url"] %>
+        </td>
+
+        <td><%= link_to (sanitize recipe["title"]), recipe["source_url"] %></td>
+        <td><%= recipe["social_rank"] %></td>
+    </tr>
+    <% end %>
+</table>
+
+<% end %>
