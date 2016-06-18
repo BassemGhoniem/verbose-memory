@@ -1,5 +1,4 @@
-var hostname = 'localhost';
-var port = 3000;
+const hostname = 'localhost', port = 3000;
 
 require('http')
     .createServer(function (req, res) {

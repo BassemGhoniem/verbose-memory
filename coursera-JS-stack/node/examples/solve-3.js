@@ -11,8 +11,10 @@ function solveRect(l, b) {
         if (err) {
             console.log(err);
         } else {
-            console.log("The area of a rectangle of dimensions length = " + l + " and breadth = " + b + " is " + rectangle.area());
-            console.log("The perimeter of a rectangle of dimensions length = " + l + " and breadth = " + b + " is " + rectangle.perimeter());
+            console.log("The area of a rectangle of dimensions length = " + l
+                + " and breadth = " + b + " is " + rectangle.area());
+            console.log("The perimeter of a rectangle of dimensions length = " + l
+                + " and breadth = " + b + " is " + rectangle.perimeter());
         }
     });
 }
