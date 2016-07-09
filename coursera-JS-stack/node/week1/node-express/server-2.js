@@ -5,7 +5,7 @@ var port = 3000;
 
 
 express()
-    .use(morgan('combined'))
+    .use(morgan('dev'))
     .use(express.static(__dirname + '/public'))
     .listen(port, hostname, function () {
         console.log('Server running at http://' + hostname + ':' + port + '/');
